@@ -1,0 +1,70 @@
+
+// A Program that tests the features added to the Tastier Language.
+
+program Test {
+
+  int globalA;
+  int globalB;
+
+  void myFunction(int a, int b) {
+
+    const notTrue := false;                             //Testing Constant definitions.
+    const nine := 9;
+
+    int arrayOfSizeThree[3];                            //Testing Array Declaration.
+    int test, k, forResult, switchResult,t;
+    forResult := 0;
+
+    a := 4;                                             //Testing change value of local variable passed by reference.
+
+    b := 4;                                             //Testing change value of global variable passed by reference.
+
+    globalB := 4;                                       //Testing change of global variable not passed into function.
+
+    test := notTrue? 2 : 1;                             //Testing the conditional assignment statement.
+
+    for(k:=0;k<10;k:=k+1;){                             //Testing for statement.
+      forResult := forResult+1;
+    }
+
+
+    switch(globalA){                                    //Testing switch statement.
+        case 1: switchResult := 0;
+        case 2: switchResult := 0;
+        case 3: switchResult := 0;
+        case 4: switchResult := 1;
+    }
+
+                                                        // RESULTS
+
+    write "test         = "; writeln test;              // test = 1
+
+    write "k            = "; writeln k;                 // k = 10
+
+    write "forResult    = "; writeln forResult;         // forResult = 10
+
+    write "switchResult = "; writeln switchResult;      // switchResult = 1
+  }
+    
+  void main() {
+
+    const poopoo := true;               //Testing Constant definitions.
+
+ 		int x;
+
+ 		x := 1;
+    globalA := 2;
+    globalB := 3;
+
+    myFunction(x,globalA); 
+    write "\n";
+
+                                                       // RESULTS
+
+    write "x        = "; writeln x;                    // x = 4
+
+    write "globalA  = "; writeln globalA;              // globalA = 4
+
+    write "globalB  = "; writeln globalB;              // globalB = 4
+  }
+}
